@@ -51,10 +51,11 @@ function setup(){
 
 function draw(){
   // this function runs again and again (60x per second)
+    
   background(120, 190, 255);// sky background
     fill(250, 250, 150)
     ellipse(600, 10, 100)// "sun"
-
+  text("Press mouse for a happy bat and a bat with the Zoomies!", 20, 40)
    if(mouseIsPressed){
     background(50, 10, 150)
     x = x + xSpeed // movement
@@ -69,6 +70,14 @@ function draw(){
   }
   x = x + xSpeed // movement
   y += ySpeed 
+
+  if(x > width || x < 0){
+    xSpeed = xSpeed * -1
+  }
+
+  if(y > height || y < 0){
+    ySpeed = ySpeed * -1
+  }
 
   // add your image drawing code here
 
@@ -104,15 +113,6 @@ function draw(){
   strokeWeight(4.5);
   arc(0,-45, 40, 15, TWO_PI, PI, open); //smile
   
- //fill(255, 50, 140);
-  //strokeWeight(4.5);
-  //arc(0,-45, 35, 30, TWO_PI, PI, CHORD);
-  //fill(255);
-  //strokeWeight(2);
-  //triangle(-14,-45, -14, -35, -4, -45); // L fang
-  //triangle(14, -45, 14, -35, 4, -45);// R fang
-  //strokeWeight(4.5);
-
 
 
 
